@@ -1,0 +1,121 @@
+$white: #fff;
+$spanish-viridian-green: #2A7F62;
+$yellow: #FCBB46;
+$bg-green-tint: #F0FFFA;
+$vivid-green: #52FFC4;
+$light-button-green: #6DCAAA;
+$header-bg: #3E6A5B;
+$footer-bg: #134030;
+
+$bg: $white;
+$primer-color: $spanish-viridian-green;
+$seconder-color: $yellow;
+
+
+//Device widths
+$mobile-max: 800px;
+$desktop-big-min: 1200px;
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-max) {
+    @content;
+  }
+}
+@mixin not-mobile {
+  @media screen and (min-width: $mobile-max) {
+    @content;
+  }
+}
+@mixin big-screen {
+  @media screen and (min-width: $desktop-big-min) {
+    @content;
+  }
+}
+
+//Gap between viewport borders and content ▼
+
+$page-padding: clamp(10px, 7vw, 250px);
+$page-padding-big-screen: 10vw;
+
+@mixin padding-left {
+  padding-left: $page-padding;
+  @include big-screen() {
+    padding-left: $page-padding-big-screen;
+  }
+}
+@mixin padding-right {
+  padding-right: $page-padding;
+  @include big-screen() {
+    padding-right: $page-padding-big-screen;
+  }
+}
+@mixin padding-top {
+  padding-top: $page-padding;
+  @include big-screen() {
+    padding-top: $page-padding-big-screen;
+  }
+}
+@mixin padding-bottom {
+  padding-bottom: $page-padding;
+  @include big-screen() {
+    padding-bottom: $page-padding-big-screen;
+  }
+}
+
+@mixin padding-sides {
+  @include padding-left();
+  @include padding-right();
+}
+@mixin padding-vertical {
+  @include padding-top();
+  @include padding-bottom();
+}
+
+@mixin padding-all {
+  @include padding-sides();
+  @include padding-vertical();
+}
+
+//Margin versions of gap ▼
+
+@mixin margin-left {
+  margin-left: $page-padding;
+  @include big-screen() {
+    margin-left: $page-padding-big-screen;
+  }
+}
+@mixin margin-right {
+  margin-right: $page-padding;
+  @include big-screen() {
+    margin-right: $page-padding-big-screen;
+  }
+}
+@mixin margin-top {
+  margin-top: $page-padding;
+  @include big-screen() {
+    margin-top: $page-padding-big-screen;
+  }
+}
+@mixin margin-bottom {
+  margin-bottom: $page-padding;
+  @include big-screen() {
+    margin-bottom: $page-padding-big-screen;
+  }
+}
+
+@mixin margin-sides {
+  @include margin-left();
+  @include margin-right();
+}
+@mixin margin-vertical {
+  @include margin-top();
+  @include margin-bottom();
+}
+
+@mixin margin-all {
+  @include margin-sides();
+  @include margin-vertical();
+}
+
+//Element sizes ▼
+$header-height: clamp(35px, 7vh, 200px);
