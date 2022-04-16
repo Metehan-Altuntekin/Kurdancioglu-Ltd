@@ -31,7 +31,7 @@
         <path d="M20 23.9623L31.8857 35.9812L20 48L8.11428 35.9812L20 23.9623Z" fill="#2A7F62" />
       </svg>
     </div>
-    <div class="theme-toggle" title="Light - Dark Theme Toggle">
+    <div id="theme-toggle" class="theme-toggle" title="Light - Dark Theme Toggle">
       <div class="active-bg"></div>
       <div class="light">
         <img src="./assets/icons/ic_baseline-light-mode.svg" alt="">
@@ -40,15 +40,28 @@
         <img src="./assets/icons/ic_baseline-mode-night.svg" alt="">
       </div>
     </div>
-    <div class="mobile-nav-toggle" title="open mobile navigation">
+    <div id="mobile-nav-toggle" class="mobile-nav-toggle" title="open mobile navigation">
       <svg width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path d="M4.08653 7H26.2981V9.33333H4.08653V7ZM4.08653 12.8333H26.2981V15.1667H4.08653V12.8333ZM4.08653 18.6667H26.2981V21H4.08653V18.6667Z" fill="white" />
       </svg>
     </div>
     <nav>
-      <a href="#products">Products</a>
-      <a href="#about">About Us</a>
-      <a href="#contact">Contact</a>
+      <button id="close-mobile-nav">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 4C35.06 4 44 12.94 44 24C44 35.06 35.06 44 24 44C12.94 44 4 35.06 4 24C4 12.94 12.94 4 24 4ZM31.18 14L24 21.18L16.82 14L14 16.82L21.18 24L14 31.18L16.82 34L24 26.82L31.18 34L34 31.18L26.82 24L34 16.82L31.18 14Z" fill="white" />
+        </svg>
+      </button>
+      <ul>
+        <li>
+          <a href="#products">Products</a>
+        </li>
+        <li>
+          <a href="#about">About Us</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
     </nav>
   </header>
   <main>
@@ -61,9 +74,13 @@
         <img class="dark-theme" src="./assets/images/hero-dark-theme.png" aria-hidden="true">
       </div>
     </section>
+    <section id="products"></section>
+    <section id="about"></section>
+    <section id="contact"></section>
   </main>
 
   <script src="./js/main.js"></script>
+  <script src="./js/header.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,12 @@
 @import "utilities";
 
-body{
+body {
   background-color: $white;
 
-  header{
+  &.dark{
+    background-color: black
+  }
+  header {
     @include padding-sides;
     background-color: $white;
     transition: background-color 1s;
@@ -14,29 +17,33 @@ body{
     top: 0;
     width: 100%;
     grid-template-rows: 100%;
-    grid-template-columns: repeat(3,1fr);
-    @include mobile{
-      grid-template-columns: repeat(3,auto);
+    grid-template-columns: repeat(3, 1fr);
+
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    @include mobile {
+      grid-template-columns: repeat(3, auto);
       gap: 10px;
     }
     align-items: center;
 
-    &.scrolled{
+    &.scrolled {
       background-color: $header-bg;
     }
 
-    .logo{
+    .logo {
       height: 80%;
       width: max-content;
-      svg{
+      svg {
         height: 100%;
         width: 100%;
       }
     }
-    
-    .theme-toggle{
+
+    .theme-toggle {
       justify-self: center;
-      background-color: #E3F1EC;
+      background-color: #e3f1ec;
       height: clamp(20px, 50%, 40px);
       aspect-ratio: 3/1;
       min-width: 0;
@@ -46,7 +53,12 @@ body{
 
       display: flex;
       position: relative;
-      .active-bg{
+      &.dark{
+        .active-bg{
+          left: 50%;
+        }
+      }
+      .active-bg {
         content: "";
         width: 50%;
         height: 100%;
@@ -55,52 +67,107 @@ body{
         left: 0%;
         transition: left 0.5s;
       }
-      > *:not(.active-bg){
+      > *:not(.active-bg) {
         z-index: 2;
         display: flex;
         width: 50%;
-      
+
         justify-content: center;
         align-items: center;
-        img{
+        img {
           height: 85%;
         }
       }
     }
-    
+
     .mobile-nav-toggle,
-    nav{
+    nav {
       grid-column: 3/4;
       grid-row: 1/-1;
       justify-self: end;
 
-      &.mobile-nav-toggle{
+      &.mobile-nav-toggle {
         display: flex;
         align-items: center;
         justify-content: center;
-
-        @include not-mobile{
+        svg {
+          path {
+            fill: black;
+          }
+        }
+        @include not-mobile {
           display: none;
         }
       }
-      &:is(nav){
-        display: flex;
-        flex-direction: row;
-        a{
-          font-size: 1rem;
-          white-space: nowrap;
-          margin-left: clamp(1em, 5vmin ,2em);
-        }
-        @include mobile{
+      &:is(nav) {
+        #close-mobile-nav {
           display: none;
+        }
+        ul {
+          display: flex;
+          flex-direction: row;
+          list-style-type: none;
+          li {
+            margin-left: clamp(1em, 5vmin, 2em);
+            a {
+              font-size: 1rem;
+              white-space: nowrap;
+            }
+          }
+        }
+        @include mobile {
+          z-index: 3;
+          background-color: $light-button-green;
+          position: fixed;
+          right: 0;
+          top: 0;
+          height: 100vh;
+          transform: translateX(100%);
+          transition: transform 0.4s;
+          &.open {
+            transform: translateX(0%);
+
+          }
+          
+          #close-mobile-nav {
+            display: block;
+            background-color: transparent;
+            position: absolute;
+            right: 10vw;
+            top: calc($header-height/2);
+            height: 1.8rem;
+            svg {
+              height: 100%;
+              width: 100%;
+              path {
+                fill: black;
+              }
+            }
+          }
+
+          ul {
+            flex-direction: column;
+            padding: calc($header-height + 1rem) 10vw;
+            gap: 1rem;
+            align-items: start;
+            justify-content: start;
+
+            li {
+              width: 100%;
+              margin: unset;
+              a {
+                width: 100%;
+                text-align: end;
+              }
+            }
+          }
         }
       }
     }
   }
 
-  main{
-
-    #hero{
+  main {
+    #hero {
       @include padding-left;
     }
   }

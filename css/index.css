@@ -1,6 +1,9 @@
 body {
   background-color: #fff;
 }
+body.dark {
+  background-color: black;
+}
 body header {
   padding-left: clamp(10px, 7vw, 250px);
   padding-right: clamp(10px, 7vw, 250px);
@@ -13,6 +16,8 @@ body header {
   width: 100%;
   grid-template-rows: 100%;
   grid-template-columns: repeat(3, 1fr);
+  overflow-x: hidden;
+  overflow-y: visible;
   align-items: center;
 }
 @media screen and (min-width: 1200px) {
@@ -46,7 +51,7 @@ body header .logo svg {
 }
 body header .theme-toggle {
   justify-self: center;
-  background-color: #E3F1EC;
+  background-color: #e3f1ec;
   height: clamp(20px, 50%, 40px);
   aspect-ratio: 3/1;
   min-width: 0;
@@ -55,6 +60,9 @@ body header .theme-toggle {
   overflow: hidden;
   display: flex;
   position: relative;
+}
+body header .theme-toggle.dark .active-bg {
+  left: 50%;
 }
 body header .theme-toggle .active-bg {
   content: "";
@@ -87,27 +95,86 @@ body header nav.mobile-nav-toggle {
   align-items: center;
   justify-content: center;
 }
+body header .mobile-nav-toggle.mobile-nav-toggle svg path,
+body header nav.mobile-nav-toggle svg path {
+  fill: black;
+}
 @media screen and (min-width: 800px) {
   body header .mobile-nav-toggle.mobile-nav-toggle,
 body header nav.mobile-nav-toggle {
     display: none;
   }
 }
-body header .mobile-nav-toggle:is(nav),
-body header nav:is(nav) {
+body header .mobile-nav-toggle:is(nav) #close-mobile-nav,
+body header nav:is(nav) #close-mobile-nav {
+  display: none;
+}
+body header .mobile-nav-toggle:is(nav) ul,
+body header nav:is(nav) ul {
   display: flex;
   flex-direction: row;
+  list-style-type: none;
 }
-body header .mobile-nav-toggle:is(nav) a,
-body header nav:is(nav) a {
+body header .mobile-nav-toggle:is(nav) ul li,
+body header nav:is(nav) ul li {
+  margin-left: clamp(1em, 5vmin, 2em);
+}
+body header .mobile-nav-toggle:is(nav) ul li a,
+body header nav:is(nav) ul li a {
   font-size: 1rem;
   white-space: nowrap;
-  margin-left: clamp(1em, 5vmin, 2em);
 }
 @media screen and (max-width: 800px) {
   body header .mobile-nav-toggle:is(nav),
 body header nav:is(nav) {
-    display: none;
+    z-index: 3;
+    background-color: #6DCAAA;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.4s;
+  }
+  body header .mobile-nav-toggle:is(nav).open,
+body header nav:is(nav).open {
+    transform: translateX(0%);
+  }
+  body header .mobile-nav-toggle:is(nav) #close-mobile-nav,
+body header nav:is(nav) #close-mobile-nav {
+    display: block;
+    background-color: transparent;
+    position: absolute;
+    right: 10vw;
+    top: calc(clamp(35px, 7vh, 200px) / 2);
+    height: 1.8rem;
+  }
+  body header .mobile-nav-toggle:is(nav) #close-mobile-nav svg,
+body header nav:is(nav) #close-mobile-nav svg {
+    height: 100%;
+    width: 100%;
+  }
+  body header .mobile-nav-toggle:is(nav) #close-mobile-nav svg path,
+body header nav:is(nav) #close-mobile-nav svg path {
+    fill: black;
+  }
+  body header .mobile-nav-toggle:is(nav) ul,
+body header nav:is(nav) ul {
+    flex-direction: column;
+    padding: calc(clamp(35px, 7vh, 200px) + 1rem) 10vw;
+    gap: 1rem;
+    align-items: start;
+    justify-content: start;
+  }
+  body header .mobile-nav-toggle:is(nav) ul li,
+body header nav:is(nav) ul li {
+    width: 100%;
+    margin: unset;
+  }
+  body header .mobile-nav-toggle:is(nav) ul li a,
+body header nav:is(nav) ul li a {
+    width: 100%;
+    text-align: end;
   }
 }
 body main #hero {
