@@ -3,8 +3,8 @@
 body {
   background-color: $white;
 
-  &.dark-theme{
-    background-color: black
+  &.dark-theme {
+    background-color: black;
   }
   header {
     @include padding-sides;
@@ -21,11 +21,11 @@ body {
 
     overflow-x: hidden;
     overflow-y: visible;
-    
-    &.dark-theme{
+
+    &.dark-theme {
       background-color: black;
     }
-    
+
     @include mobile {
       grid-template-columns: repeat(3, auto);
       gap: 10px;
@@ -57,8 +57,8 @@ body {
 
       display: flex;
       position: relative;
-      &.dark-theme{
-        .active-bg{
+      &.dark-theme {
+        .active-bg {
           left: 50%;
         }
       }
@@ -130,9 +130,8 @@ body {
           transition: transform 0.4s;
           &.open {
             transform: translateX(0%);
-
           }
-          
+
           #close-mobile-nav {
             display: block;
             background-color: transparent;
@@ -173,6 +172,87 @@ body {
   main {
     #hero {
       @include padding-left;
+      padding-top: $header-height;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+
+      .image {
+        position: absolute;
+        z-index: -1;
+        height: 100%;
+
+        left: 25%;
+        @include not-mobile{
+          left: 50%;
+        }
+        &.dark-theme{
+          @include mobile{
+            left: 50%;
+          }
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-position: left;
+
+          
+        }
+      }
+
+      h1 {
+        font-size: clamp(2rem, 7vmin, 7rem);
+        font-weight: 700;
+        position: relative;
+        line-height: 1.1;
+        max-width: 70%;
+        @include not-mobile {
+          max-width: 50%;
+        }
+
+        &::before{
+          content: attr(data-watermark);
+          position: absolute;
+          font-size: 1.6em;
+          z-index: 0;
+          color: #989898;
+          opacity: 0.15;
+          top: -0.7em;
+          left: -1em;
+        }
+      }
+      h2 {
+        font-weight: 600;
+        color: #7d7d7d;
+        font-size: clamp(1rem, 2.5vmin, 4rem);
+        margin-top: 1em;
+        max-width: 70%;
+        @include not-mobile {
+          max-width: 50%;
+        }
+      }
+
+      .buttons {
+        margin-top: 20vh;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        .call-to {
+          @include primer-button;
+          font-size: clamp(1rem, 2.5vmin, 3rem);
+          img {
+            height: 0.6em;
+            margin-left: 1em;
+          }
+        }
+        
+        .seconder-call-to {
+          font-size: clamp(1rem, 2.5vmin, 3rem);
+          @include seconder-button;
+        }
+      }
     }
   }
 }
