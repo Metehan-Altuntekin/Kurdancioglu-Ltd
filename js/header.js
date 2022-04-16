@@ -32,11 +32,17 @@ mobileNavClose.addEventListener("click", function () {
 const themeToggle = document.getElementById("theme-toggle")
 
 themeToggle.addEventListener("click", () => {
-  if(body.classList.contains("dark")){
-    body.classList.remove("dark")
-    themeToggle.classList.remove("dark")
-  }else{
-    body.classList.add("dark")
-    themeToggle.classList.add("dark")
+  if (body.classList.contains("dark-theme")) {
+    /* body.classList.remove("dark-theme")
+    themeToggle.classList.remove("dark-theme") */
+    everything.forEach(item => {
+      item.classList.remove("dark-theme")
+    })
+  } else {
+    /* body.classList.add("dark-theme")
+    themeToggle.classList.add("dark-theme") */
+    everything.forEach(item => {
+      item.classList.add("dark-theme")
+    })
   }
 })

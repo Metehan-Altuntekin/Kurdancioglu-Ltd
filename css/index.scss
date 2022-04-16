@@ -3,7 +3,7 @@
 body {
   background-color: $white;
 
-  &.dark{
+  &.dark-theme{
     background-color: black
   }
   header {
@@ -21,7 +21,11 @@ body {
 
     overflow-x: hidden;
     overflow-y: visible;
-
+    
+    &.dark-theme{
+      background-color: black;
+    }
+    
     @include mobile {
       grid-template-columns: repeat(3, auto);
       gap: 10px;
@@ -53,7 +57,7 @@ body {
 
       display: flex;
       position: relative;
-      &.dark{
+      &.dark-theme{
         .active-bg{
           left: 50%;
         }

@@ -1,7 +1,7 @@
 body {
   background-color: #fff;
 }
-body.dark {
+body.dark-theme {
   background-color: black;
 }
 body header {
@@ -29,6 +29,9 @@ body header {
   body header {
     padding-right: 10vw;
   }
+}
+body header.dark-theme {
+  background-color: black;
 }
 @media screen and (max-width: 800px) {
   body header {
@@ -61,7 +64,7 @@ body header .theme-toggle {
   display: flex;
   position: relative;
 }
-body header .theme-toggle.dark .active-bg {
+body header .theme-toggle.dark-theme .active-bg {
   left: 50%;
 }
 body header .theme-toggle .active-bg {
