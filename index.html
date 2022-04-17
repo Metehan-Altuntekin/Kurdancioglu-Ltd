@@ -35,11 +35,15 @@
 
     <div id="theme-toggle" class="theme-toggle" title="Light - Dark Theme Toggle">
       <div class="active-bg"></div>
-      <div class="light">
-        <img src="./assets/icons/ic_baseline-light-mode.svg" alt="">
+      <div class="light" aria-hidden="true">
+        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.5 6.70837C8.85498 6.70837 6.70831 8.85504 6.70831 11.5C6.70831 14.145 8.85498 16.2917 11.5 16.2917C14.145 16.2917 16.2916 14.145 16.2916 11.5C16.2916 8.85504 14.145 6.70837 11.5 6.70837ZM1.91665 12.4584H3.83331C4.3604 12.4584 4.79165 12.0271 4.79165 11.5C4.79165 10.973 4.3604 10.5417 3.83331 10.5417H1.91665C1.38956 10.5417 0.958313 10.973 0.958313 11.5C0.958313 12.0271 1.38956 12.4584 1.91665 12.4584ZM19.1666 12.4584H21.0833C21.6104 12.4584 22.0416 12.0271 22.0416 11.5C22.0416 10.973 21.6104 10.5417 21.0833 10.5417H19.1666C18.6396 10.5417 18.2083 10.973 18.2083 11.5C18.2083 12.0271 18.6396 12.4584 19.1666 12.4584ZM10.5416 1.91671V3.83337C10.5416 4.36046 10.9729 4.79171 11.5 4.79171C12.0271 4.79171 12.4583 4.36046 12.4583 3.83337V1.91671C12.4583 1.38962 12.0271 0.958374 11.5 0.958374C10.9729 0.958374 10.5416 1.38962 10.5416 1.91671ZM10.5416 19.1667V21.0834C10.5416 21.6105 10.9729 22.0417 11.5 22.0417C12.0271 22.0417 12.4583 21.6105 12.4583 21.0834V19.1667C12.4583 18.6396 12.0271 18.2084 11.5 18.2084C10.9729 18.2084 10.5416 18.6396 10.5416 19.1667ZM5.74039 4.38921C5.65174 4.30037 5.54643 4.22988 5.43049 4.18179C5.31456 4.1337 5.19028 4.10895 5.06477 4.10895C4.93926 4.10895 4.81498 4.1337 4.69905 4.18179C4.58311 4.22988 4.4778 4.30037 4.38915 4.38921C4.3003 4.47787 4.22982 4.58318 4.18173 4.69911C4.13364 4.81504 4.10889 4.93932 4.10889 5.06483C4.10889 5.19034 4.13364 5.31462 4.18173 5.43055C4.22982 5.54649 4.3003 5.6518 4.38915 5.74046L5.40498 6.75629C5.77873 7.13004 6.39206 7.13004 6.75623 6.75629C7.12039 6.38254 7.12998 5.76921 6.75623 5.40504L5.74039 4.38921ZM17.595 16.2438C17.5063 16.1549 17.401 16.0845 17.2851 16.0364C17.1691 15.9883 17.0449 15.9635 16.9194 15.9635C16.7938 15.9635 16.6696 15.9883 16.5536 16.0364C16.4377 16.0845 16.3324 16.1549 16.2437 16.2438C16.1549 16.3324 16.0844 16.4378 16.0363 16.5537C15.9882 16.6696 15.9635 16.7939 15.9635 16.9194C15.9635 17.0449 15.9882 17.1692 16.0363 17.2851C16.0844 17.4011 16.1549 17.5064 16.2437 17.595L17.2596 18.6109C17.6333 18.9846 18.2466 18.9846 18.6108 18.6109C18.6996 18.5222 18.7701 18.4169 18.8182 18.301C18.8663 18.185 18.8911 18.0608 18.8911 17.9352C18.8911 17.8097 18.8663 17.6855 18.8182 17.5695C18.7701 17.4536 18.6996 17.3483 18.6108 17.2596L17.595 16.2438ZM18.6108 5.74046C18.6996 5.6518 18.7701 5.54649 18.8182 5.43055C18.8663 5.31462 18.8911 5.19034 18.8911 5.06483C18.8911 4.93932 18.8663 4.81504 18.8182 4.69911C18.7701 4.58318 18.6996 4.47787 18.6108 4.38921C18.5221 4.30037 18.4168 4.22988 18.3009 4.18179C18.185 4.1337 18.0607 4.10895 17.9352 4.10895C17.8097 4.10895 17.6854 4.1337 17.5695 4.18179C17.4535 4.22988 17.3482 4.30037 17.2596 4.38921L16.2437 5.40504C15.87 5.77879 15.87 6.39212 16.2437 6.75629C16.6175 7.12046 17.2308 7.13004 17.595 6.75629L18.6108 5.74046ZM6.75623 17.595C6.84507 17.5064 6.91555 17.4011 6.96364 17.2851C7.01173 17.1692 7.03649 17.0449 7.03649 16.9194C7.03649 16.7939 7.01173 16.6696 6.96364 16.5537C6.91555 16.4378 6.84507 16.3324 6.75623 16.2438C6.66757 16.1549 6.56226 16.0845 6.44633 16.0364C6.33039 15.9883 6.20611 15.9635 6.0806 15.9635C5.95509 15.9635 5.83081 15.9883 5.71488 16.0364C5.59895 16.0845 5.49364 16.1549 5.40498 16.2438L4.38915 17.2596C4.0154 17.6334 4.0154 18.2467 4.38915 18.6109C4.7629 18.975 5.37623 18.9846 5.74039 18.6109L6.75623 17.595V17.595Z" fill="black" />
+        </svg>
       </div>
-      <div class="dark">
-        <img src="./assets/icons/ic_baseline-mode-night.svg" alt="">
+      <div class="dark" aria-hidden="true">
+        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.10417 1.91663C7.36 1.91663 5.72125 2.39579 4.3125 3.21038C7.17792 4.86829 9.10417 7.95413 9.10417 11.5C9.10417 15.0458 7.17792 18.1316 4.3125 19.7895C5.72125 20.6041 7.36 21.0833 9.10417 21.0833C14.3942 21.0833 18.6875 16.79 18.6875 11.5C18.6875 6.20996 14.3942 1.91663 9.10417 1.91663Z" fill="black" />
+        </svg>
       </div>
     </div>
     <div id="mobile-nav-toggle" class="mobile-nav-toggle" title="open mobile navigation">
@@ -134,6 +138,64 @@
             <ul>
               <li class="dimensions">75mm x 1.4mm</li>
               <li class="weight">140mg</li>
+              <li class="conic-length">15mm conic length</li>
+            </ul>
+          </article>
+          <a href="#contact" class="call-to">Shop Now</a>
+        </li>
+        <li>
+          <img src="./assets/images/products/colored-play-sticks.jpg" alt="An image of different colored toothpicks in a plastic jar">
+          <article class="extract">
+            <div class="watermark">
+              <svg viewBox="0 0 146 189" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M89.5 0H146L56.5 188.5H0L89.5 0Z" fill="url(#paint0_linear_163_132)" />
+                <defs>
+                  <linearGradient id="paint0_linear_163_132" x1="120.5" y1="2.02348e-06" x2="33" y2="189" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#52FFC4" />
+                    <stop offset="1" stop-color="#52FFC4" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="overline">For Kids</span>
+            <h1>Colored Play Sticks</h1>
+            <h2>Help growth of your kid’s creativity. Maybe your creativity too?</h2>
+            <p>Realized your children are curious about toothpicks? Give them our colored play toothpicks. They are softer and safer but be careful under 5 year olds! They love swallow everyhing.</p>
+          </article>
+          <article class="dimensions">
+            <h3 class="title">Dimensions:</h3>
+            <ul>
+              <li class="dimensions">65mm x 2mm</li>
+              <li class="weight">80mg</li>
+              <li class="conic-length">15mm conic length</li>
+            </ul>
+          </article>
+          <a href="#contact" class="call-to">Shop Now</a>
+        </li>
+        <li>
+          <img src="./assets/images/products/painting-sticks.jpg" alt="An image of a bunch of paint dipped thick sticks aligned side by side">
+          <article class="extract">
+            <div class="watermark">
+              <svg viewBox="0 0 146 189" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M89.5 0H146L56.5 188.5H0L89.5 0Z" fill="url(#paint0_linear_163_132)" />
+                <defs>
+                  <linearGradient id="paint0_linear_163_132" x1="120.5" y1="2.02348e-06" x2="33" y2="189" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#52FFC4" />
+                    <stop offset="1" stop-color="#52FFC4" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span class="overline">For Art</span>
+            <h1>Painting Sticks</h1>
+            <h2>Alternative to art applications sometimes</h2>
+            <p>Well, what to say, they speak for themselves to real creative and artist souls. If you soak them overnight, you can crush them for different applications.</p>
+          </article>
+          <article class="dimensions">
+            <h3 class="title">Dimensions:</h3>
+            <ul>
+              <li class="dimensions">150mm x 5mm</li>
+              <li class="weight">900mg</li>
               <li class="conic-length">15mm conic length</li>
             </ul>
           </article>

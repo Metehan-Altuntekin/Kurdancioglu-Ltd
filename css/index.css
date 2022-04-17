@@ -5,6 +5,7 @@ body.dark-theme {
   background-color: black;
 }
 body header {
+  z-index: 99999;
   padding-left: clamp(10px, 7vw, 250px);
   padding-right: clamp(10px, 7vw, 250px);
   background-color: #fff;
@@ -37,9 +38,6 @@ body header.dark-theme {
     gap: 10px;
   }
 }
-body header.scrolled {
-  background-color: #3E6A5B;
-}
 body header .logo {
   height: 80%;
   width: -webkit-max-content;
@@ -50,6 +48,9 @@ body header .logo {
 body header .logo svg {
   height: 100%;
   width: 100%;
+}
+body header .logo svg .text {
+  transition: fill 1s;
 }
 body header .logo svg .text.dark-theme {
   fill: white;
@@ -65,6 +66,7 @@ body header .theme-toggle {
   overflow: hidden;
   display: flex;
   position: relative;
+  transition: background-color 1s;
 }
 body header .theme-toggle.dark-theme {
   background-color: #28332f;
@@ -88,8 +90,11 @@ body header .theme-toggle > *:not(.active-bg) {
   justify-content: center;
   align-items: center;
 }
-body header .theme-toggle > *:not(.active-bg) img {
-  height: 85%;
+body header .theme-toggle > *:not(.active-bg) img, body header .theme-toggle > *:not(.active-bg) svg {
+  height: 70%;
+}
+body header .theme-toggle > *:not(.active-bg) img path, body header .theme-toggle > *:not(.active-bg) svg path {
+  transition: fill 1s;
 }
 body header .mobile-nav-toggle,
 body header nav {
@@ -106,6 +111,7 @@ body header nav.mobile-nav-toggle {
 body header .mobile-nav-toggle.mobile-nav-toggle svg path,
 body header nav.mobile-nav-toggle svg path {
   fill: black;
+  transition: fill 1s;
 }
 body header .mobile-nav-toggle.mobile-nav-toggle.dark-theme svg path,
 body header nav.mobile-nav-toggle.dark-theme svg path {
@@ -197,6 +203,24 @@ body header nav:is(nav) ul li a:hover {
 body header nav:is(nav) ul li a.dark-theme {
     color: black;
   }
+}
+body header.scrolled {
+  background-color: #3E6A5B;
+}
+body header.scrolled .logo svg .text {
+  fill: white;
+}
+body header.scrolled .theme-toggle {
+  background-color: #629382;
+}
+body header.scrolled .theme-toggle .active-bg {
+  background-color: #2FBA8B;
+}
+body header.scrolled .theme-toggle svg path {
+  fill: white;
+}
+body header.scrolled .mobile-nav-toggle svg path {
+  fill: white;
 }
 body main #hero {
   padding-left: clamp(10px, 7vw, 250px);
@@ -322,6 +346,10 @@ body main #hero .buttons .seconder-call-to {
   border: 1px solid #2A7F62;
   color: #2A7F62;
   font-weight: 600;
+}
+body main #products {
+  width: 100%;
+  overflow: hidden;
 }
 body main #products > ul > li {
   padding-bottom: clamp(10px, 7vw, 250px);
