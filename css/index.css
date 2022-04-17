@@ -322,4 +322,228 @@ body main #hero .buttons .seconder-call-to {
   border: 1px solid #2A7F62;
   color: #2A7F62;
   font-weight: 600;
+}
+body main #products > ul > li {
+  padding-bottom: clamp(10px, 7vw, 250px);
+  display: grid;
+  font-size: 0;
+}
+@media screen and (min-width: 1200px) {
+  body main #products > ul > li {
+    padding-bottom: 10vw;
+  }
+}
+body main #products > ul > li:nth-child(odd) {
+  padding-right: clamp(10px, 7vw, 250px);
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "image  extract" "dimens extract" "dimens button";
+}
+@media screen and (min-width: 1200px) {
+  body main #products > ul > li:nth-child(odd) {
+    padding-right: 10vw;
+  }
+}
+@media screen and (min-width: 801px) {
+  body main #products > ul > li:nth-child(odd) {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: "image extract extract" "image extract extract" "image dimens  button ";
+    padding-left: clamp(10px, 7vw, 250px);
+  }
+}
+@media screen and (min-width: 801px) and (min-width: 1200px) {
+  body main #products > ul > li:nth-child(odd) {
+    padding-left: 10vw;
+  }
+}
+@media screen and (min-width: 801px) {
+  body main #products > ul > li:nth-child(odd) img {
+    height: 100%;
+    aspect-ratio: 4/3;
+  }
+}
+body main #products > ul > li:nth-child(odd) article.extract {
+  padding-left: clamp(10px, 7vw, 250px);
+}
+@media screen and (min-width: 1200px) {
+  body main #products > ul > li:nth-child(odd) article.extract {
+    padding-left: 10vw;
+  }
+}
+body main #products > ul > li:nth-child(odd) article.extract * {
+  float: right;
+  text-align: right;
+}
+body main #products > ul > li:nth-child(odd) article.extract .watermark {
+  right: calc(-1 * clamp(1.5rem, 6vmax, 4.5rem));
+}
+body main #products > ul > li:nth-child(odd) article.extract .overline {
+  transform: translateX(0.3em);
+}
+body main #products > ul > li:nth-child(odd) article.dimensions {
+  padding-left: clamp(10px, 7vw, 250px);
+}
+@media screen and (min-width: 1200px) {
+  body main #products > ul > li:nth-child(odd) article.dimensions {
+    padding-left: 10vw;
+  }
+}
+body main #products > ul > li:nth-child(odd) .call-to {
+  justify-self: end;
+}
+body main #products > ul > li:nth-child(even) {
+  padding-left: clamp(10px, 7vw, 250px);
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "extract image" "extract dimens" "button  dimens";
+}
+@media screen and (min-width: 1200px) {
+  body main #products > ul > li:nth-child(even) {
+    padding-left: 10vw;
+  }
+}
+@media screen and (min-width: 801px) {
+  body main #products > ul > li:nth-child(even) {
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas: "extract extract image" "extract extract image" "button  dimens  image";
+    padding-right: clamp(10px, 7vw, 250px);
+  }
+}
+@media screen and (min-width: 801px) and (min-width: 1200px) {
+  body main #products > ul > li:nth-child(even) {
+    padding-right: 10vw;
+  }
+}
+@media screen and (min-width: 801px) {
+  body main #products > ul > li:nth-child(even) img {
+    height: 100%;
+    aspect-ratio: 4/3;
+  }
+}
+body main #products > ul > li:nth-child(even) img {
+  justify-self: end;
+}
+body main #products > ul > li:nth-child(even) article.extract {
+  padding-right: clamp(10px, 7vw, 250px);
+}
+@media screen and (min-width: 1200px) {
+  body main #products > ul > li:nth-child(even) article.extract {
+    padding-right: 10vw;
+  }
+}
+body main #products > ul > li:nth-child(even) article.extract * {
+  float: left;
+  text-align: left;
+}
+body main #products > ul > li:nth-child(even) article.extract .watermark {
+  left: calc(-1 * clamp(1.5rem, 6vmax, 4.5rem));
+  transform: scaleX(-1);
+}
+body main #products > ul > li:nth-child(even) article.dimensions {
+  padding-right: clamp(10px, 7vw, 250px);
+}
+@media screen and (min-width: 1200px) {
+  body main #products > ul > li:nth-child(even) article.dimensions {
+    padding-right: 10vw;
+  }
+}
+body main #products > ul > li:nth-child(even) .call-to {
+  justify-self: start;
+}
+body main #products > ul > li * {
+  min-width: 0;
+  min-height: 0;
+}
+body main #products > ul > li img {
+  grid-area: image;
+  font-size: 0;
+  display: block;
+  min-height: 250px;
+  padding: 0;
+  width: 100%;
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+}
+body main #products > ul > li article.extract {
+  grid-area: extract;
+  position: relative;
+  z-index: -1;
+  /* display: flex;
+  flex-wrap: wrap; */
+  margin-bottom: 2rem;
+}
+body main #products > ul > li article.extract *:not(.watermark) {
+  width: 100%;
+}
+body main #products > ul > li article.extract .watermark {
+  position: absolute;
+  z-index: -2;
+  top: -3vmax;
+  width: clamp(3rem, 12vmax, 9rem);
+}
+body main #products > ul > li article.extract .overline {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  color: #a8d1c3;
+  font-size: clamp(1.15rem, 1.7vw, 3rem);
+  line-height: 1.2;
+}
+body main #products > ul > li article.extract h1 {
+  font-size: clamp(1.5rem, 2.5vw, 5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+}
+body main #products > ul > li article.extract h2 {
+  font-size: clamp(1.15rem, 1.3vw, 2rem);
+  line-height: 1.1;
+  font-weight: 500;
+  color: #8f8f8f;
+  margin-bottom: 1em;
+}
+body main #products > ul > li article.extract p {
+  font-size: clamp(1rem, 0.9vw, 1.5rem);
+  line-height: 1.2;
+  max-width: 20em;
+}
+body main #products > ul > li article.dimensions {
+  grid-area: dimens;
+  align-self: end;
+}
+body main #products > ul > li article.dimensions .title {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-decoration: underline;
+}
+body main #products > ul > li article.dimensions ul li {
+  white-space: nowrap;
+  color: #686868;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+body main #products > ul > li .call-to {
+  grid-area: button;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #2A7F62;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  min-height: 0;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  align-self: end;
+  font-size: clamp(1rem, 1.3vw, 2rem);
+}
+body main #products > ul > li .call-to.dark-theme {
+  box-shadow: 0px 4px 8px rgba(42, 127, 98, 0.7);
 }/*# sourceMappingURL=index.css.map */

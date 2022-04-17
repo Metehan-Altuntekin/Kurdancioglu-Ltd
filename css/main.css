@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Poppins;
+  font-family: Poppins, Segoe UI, sans-serif;
   border: none;
   outline: none;
   text-decoration: none;
@@ -27,4 +27,8 @@ img {
   max-height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+ul {
+  list-style-type: none;
 }/*# sourceMappingURL=main.css.map */
