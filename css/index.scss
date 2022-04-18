@@ -33,7 +33,7 @@ body {
     
 
     .logo {
-      height: 80%;
+      height: 70%;
       width: max-content;
       display: inline-block;
 
@@ -136,6 +136,10 @@ body {
             a {
               font-size: clamp(1rem, 2vmin, 2rem);
               white-space: nowrap;
+              font-weight: 400;
+              &.active{
+                font-weight: 600;
+              }
             }
           }
         }
@@ -223,6 +227,16 @@ body {
         svg{
           path{
             fill: white;
+          }
+        }
+      }
+      
+      nav{
+        ul{
+          li{
+            a{
+              color: white;
+            }
           }
         }
       }
