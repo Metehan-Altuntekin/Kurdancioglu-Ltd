@@ -30,8 +30,6 @@ body {
     }
     align-items: center;
 
-    
-
     .logo {
       height: 70%;
       width: max-content;
@@ -42,7 +40,7 @@ body {
         width: 100%;
         .text {
           transition: fill 1s;
-        
+
           &.dark-theme {
             fill: white;
           }
@@ -53,7 +51,7 @@ body {
     .theme-toggle {
       justify-self: center;
       background-color: #e3f1ec;
-      height: clamp(20px, 50%, 40px);
+      height: clamp(1rem, 3vmin, 3rem);
       aspect-ratio: 3/1;
       min-width: 0;
       width: unset;
@@ -86,9 +84,10 @@ body {
 
         justify-content: center;
         align-items: center;
-        img,svg {
+        img,
+        svg {
           height: 70%;
-          path{
+          path {
             transition: fill 1s;
           }
         }
@@ -137,7 +136,7 @@ body {
               font-size: clamp(1rem, 2vmin, 2rem);
               white-space: nowrap;
               font-weight: 400;
-              &.active{
+              &.active {
                 font-weight: 600;
               }
             }
@@ -203,38 +202,36 @@ body {
     &.scrolled {
       background-color: $header-bg;
 
-      .logo{
-
-        svg{
-          .text{
+      .logo {
+        svg {
+          .text {
             fill: white;
           }
         }
       }
-      .theme-toggle{
+      .theme-toggle {
         background-color: #629382;
-        .active-bg{
-          background-color: #2FBA8B;
+        .active-bg {
+          background-color: #2fba8b;
         }
-        svg{
-          path{
+        svg {
+          path {
             fill: white;
           }
         }
       }
-      .mobile-nav-toggle{
-        
-        svg{
-          path{
+      .mobile-nav-toggle {
+        svg {
+          path {
             fill: white;
           }
         }
       }
-      
-      nav{
-        ul{
-          li{
-            a{
+
+      nav {
+        ul {
+          li {
+            a {
               color: white;
             }
           }
@@ -340,6 +337,8 @@ body {
     #products {
       width: 100%;
       overflow: hidden;
+      @include padding-bottom;
+
       > ul {
         > li {
           @include padding-bottom;
@@ -371,19 +370,19 @@ body {
 
             article.extract {
               @include padding-left;
-              
+
               * {
                 float: right;
                 text-align: right;
               }
               .watermark {
-                right: calc(-1 * clamp(1.5rem,6vmax,4.5rem));
+                right: calc(-1 * clamp(1.5rem, 6vmax, 4.5rem));
               }
               .overline {
                 transform: translateX(0.3em); //Fix for letter spacing creating gap in the end
               }
             }
-            article.dimensions{
+            article.dimensions {
               @include padding-left;
             }
             .call-to {
@@ -415,7 +414,7 @@ body {
               }
             }
 
-            img{
+            img {
               justify-self: end;
             }
             article.extract {
@@ -426,11 +425,11 @@ body {
                 text-align: left;
               }
               .watermark {
-                left: calc(-1 * clamp(1.5rem,6vmax,4.5rem));
+                left: calc(-1 * clamp(1.5rem, 6vmax, 4.5rem));
                 transform: scaleX(-1);
               }
             }
-            article.dimensions{
+            article.dimensions {
               @include padding-right;
             }
             .call-to {
@@ -467,7 +466,7 @@ body {
               position: absolute;
               z-index: -2;
               top: -3vmax;
-              width: clamp(3rem,12vmax,9rem);
+              width: clamp(3rem, 12vmax, 9rem);
             }
             .overline {
               text-transform: uppercase;
@@ -500,7 +499,7 @@ body {
           article.dimensions {
             grid-area: dimens;
             align-self: end;
-            
+
             .title {
               font-size: 0.8rem;
               font-weight: 400;
@@ -524,6 +523,130 @@ body {
             align-self: end;
 
             font-size: clamp(1rem, 1.3vw, 2rem);
+          }
+        }
+      }
+    }
+
+    #about {
+      background-image: url("../assets/shapes/about-bg.svg");
+      background-size: cover;
+      background-position: center;
+      @include padding-top;
+      padding-bottom: 3rem;
+
+      @include not-mobile{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: $page-padding;
+      }
+
+      article {
+        $side-bar-width: clamp(8px, 1.5vmin, 15px);
+        position: relative;
+        margin-top: 3rem;
+
+        p {
+          font-size: 0.95rem;
+          font-weight: 300;
+        }
+
+        &:first-child,
+        &:nth-child(2) {
+          @include margin-sides;
+
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: $side-bar-width;
+            background-color: $lining-green;
+          }
+
+          h1 {
+            font-weight: 500;
+            font-size: clamp(1.6rem, 3vmin, 5rem);
+            line-height: 1;
+          }
+          h2 {
+            font-size: clamp(1.2rem, 2vmin, 3rem);
+            font-weight: 500;
+            color: #c2c2c2;
+            margin-bottom: 1em;
+          }
+
+          &:first-child {
+            grid-column: 1/3;
+            &::before {
+              left: calc(-1 * $page-padding);
+
+              @include not-mobile{
+                left: calc(-3 * $side-bar-width);
+              }
+            }
+          }
+          
+          &:nth-child(2) {
+            grid-column: 3/-1;
+            &::before {
+              right: calc(-3 * $side-bar-width);
+              
+              
+            }
+            * {
+              width: 100%;
+              text-align: end;
+            }
+          }
+        }
+
+        &.founder {
+          @include padding-sides;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          grid-column: 2/4;
+          * {
+            text-align: center;
+          }
+
+          img {
+            border-radius: 9999px;
+            width: 4rem;
+            margin-bottom: 1rem;
+          }
+
+          .heading {
+            position: relative;
+            margin-bottom: 1.6rem;
+
+            &::before {
+              content: "";
+              display: block;
+              position: absolute;
+              height: 100%;
+              width: 0.5em;
+              background-color: $yellow;
+              top: 0;
+              left: -1em;
+            }
+
+            h1 {
+              font-size: clamp(1.2rem, 2.5vmin, 3rem);
+              font-weight: 500;
+              line-height: 1;
+            }
+            h2 {
+              color: #71ac98;
+              font-weight: 600;
+              text-align: start;
+              line-height: 1;
+              padding-top: 0.4em;
+            }
+          }
+          p {
           }
         }
       }
