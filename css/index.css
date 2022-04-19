@@ -1,10 +1,10 @@
 @charset "UTF-8";
 body {
   background-color: #fff;
+  overflow-x: hidden;
 }
 body > * {
   width: 100%;
-  overflow-x: hidden;
 }
 body.dark-theme {
   background-color: black;
@@ -1034,4 +1034,120 @@ body main #contact .map {
   body main #contact .map {
     display: none;
   }
+}
+body footer {
+  padding-left: clamp(10px, 5vw, 250px);
+  padding-right: clamp(10px, 5vw, 250px);
+  padding-top: clamp(2rem, 8vmin, 5rem);
+  padding-bottom: clamp(2rem, 8vmin, 5rem);
+  background-color: #134030;
+  display: grid;
+  gap: 3rem;
+  grid-template-areas: "logo" "copy" "addr" "medi" "disc";
+}
+@media screen and (min-width: 1200px) {
+  body footer {
+    padding-left: 10vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body footer {
+    padding-right: 10vw;
+  }
+}
+@media screen and (min-width: 801px) {
+  body footer {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "logo .... medi" "copy disc addr";
+  }
+}
+body footer * {
+  color: white;
+}
+body footer .logo {
+  grid-area: logo;
+}
+body footer .logo svg {
+  height: clamp(2rem, 5vmax, 4rem);
+}
+body footer .logo svg .text {
+  fill: white;
+}
+body footer .copyright {
+  grid-area: copy;
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+}
+@media screen and (min-width: 801px) {
+  body footer .copyright {
+    align-self: end;
+  }
+}
+body footer .copyright span {
+  font-size: 0.9rem;
+}
+body footer .copyright span:first-child {
+  font-weight: 400;
+}
+body footer .copyright span:last-child {
+  color: #bbb;
+}
+body footer .social-media {
+  grid-area: medi;
+  justify-self: center;
+}
+@media screen and (min-width: 801px) {
+  body footer .social-media {
+    justify-self: end;
+  }
+}
+body footer .social-media ul {
+  font-size: 2.5rem;
+  display: flex;
+  gap: 0.1em;
+}
+body footer .social-media ul li {
+  font-size: inherit;
+  height: 1em;
+}
+body footer .social-media ul li img {
+  height: 100%;
+}
+body footer address {
+  grid-area: addr;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+@media screen and (min-width: 801px) {
+  body footer address {
+    align-self: end;
+  }
+}
+body footer address * {
+  font-weight: 300;
+}
+body footer address a {
+  margin-bottom: 0.5em;
+}
+body footer address a.email {
+  color: lightblue;
+}
+body footer address a.location {
+  color: #ccc;
+}
+body footer .disclaimer {
+  grid-area: disc;
+  text-align: center;
+  font-weight: 300;
+}
+@media screen and (min-width: 801px) {
+  body footer .disclaimer {
+    align-self: end;
+  }
+}
+body footer .disclaimer span {
+  color: hsl(0deg, 50%, 50%);
 }/*# sourceMappingURL=index.css.map */

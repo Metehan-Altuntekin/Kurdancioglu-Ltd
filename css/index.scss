@@ -2,9 +2,9 @@
 
 body {
   background-color: $white;
+  overflow-x: hidden;
   > *{
     width: 100%;
-    overflow-x: hidden;
   }
 
   &.dark-theme {
@@ -857,6 +857,122 @@ body {
           display: none;
         }
       }
+    }
+  }
+
+  footer{
+    @include padding-sides;
+    padding-top: clamp(2rem, 8vmin, 5rem);
+    padding-bottom: clamp(2rem, 8vmin, 5rem);
+    background-color: #134030;
+    display: grid;
+    gap: 3rem;
+    grid-template-areas: 
+    "logo"
+    "copy"
+    "addr"
+    "medi"
+    "disc";
+    @include not-mobile{
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: 
+      "logo .... medi"
+      "copy disc addr";
+    }
+
+    *{
+      color: white;
+      
+    }
+
+    .logo{
+      grid-area: logo;
+      svg{
+        height: clamp(2rem, 5vmax, 4rem);
+        .text{
+          fill: white;
+        }
+      }
+    }
+    .copyright{
+      grid-area: copy;
+      display: flex;
+      flex-direction: column;
+      font-weight: 300;
+      
+      @include not-mobile{
+        align-self: end;
+      }
+      
+      span{
+        font-size: 0.9rem;
+        &:first-child{
+          font-weight: 400;
+        }
+        &:last-child{
+          color: #bbb;
+        }
+      }
+    }
+    .social-media{
+      grid-area: medi;
+      justify-self: center;
+      @include not-mobile{
+        justify-self: end;
+      }
+      ul{
+        font-size: 2.5rem;
+        display: flex;
+        gap: 0.1em;
+        li{
+          font-size: inherit;
+          height: 1em;
+          img{
+            height: 100%;
+          }
+        }
+      }
+    }
+    address{
+      grid-area: addr;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+      @include not-mobile{
+        align-self: end;
+      }
+
+      *{
+        font-weight: 300;
+      }
+      a{
+        margin-bottom: 0.5em;
+        &.phone{
+
+        }
+        &.email{
+          color: lightblue;
+        }
+        &.location{
+          color: #ccc;
+        }
+      }
+    }
+    .disclaimer{
+      grid-area: disc;
+      text-align: center;
+      font-weight: 300;
+      
+      @include not-mobile{
+        align-self: end;
+      }
+
+      span{
+        color: hsla(0, 50%, 50%);
+      }
+      
     }
   }
 }
