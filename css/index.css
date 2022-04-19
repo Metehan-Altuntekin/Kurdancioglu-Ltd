@@ -2,6 +2,10 @@
 body {
   background-color: #fff;
 }
+body > * {
+  width: 100%;
+  overflow-x: hidden;
+}
 body.dark-theme {
   background-color: black;
 }
@@ -729,6 +733,11 @@ body main #about article.founder .heading h2 {
 body main #contact {
   padding-top: clamp(10px, 5vw, 250px);
   padding-bottom: clamp(10px, 5vw, 250px);
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  width: 100%;
+  justify-content: center;
 }
 @media screen and (min-width: 1200px) {
   body main #contact {
@@ -745,6 +754,7 @@ body main #contact .banner {
   max-height: min(400px, 35vh);
 }
 body main #contact > ul.shopping-options {
+  width: 100%;
   padding-left: clamp(10px, 5vw, 250px);
   padding-right: clamp(10px, 5vw, 250px);
   padding-top: clamp(10px, 5vw, 250px);
@@ -939,4 +949,89 @@ body main #contact > ul.shopping-options > li.our-store address > a span {
   text-align: start;
   font-weight: 300;
   white-space: nowrap;
+}
+body main #contact .contact-form {
+  margin-left: clamp(10px, 5vw, 250px);
+  margin-right: clamp(10px, 5vw, 250px);
+  display: flex;
+  flex-direction: column;
+  background-color: #d5eee6;
+  border-radius: clamp(10px, 3vmin, 35px);
+  padding: clamp(0.8rem, 3vmin, 2rem);
+  width: min(100%, 450px);
+}
+@media screen and (min-width: 1200px) {
+  body main #contact .contact-form {
+    margin-left: 10vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body main #contact .contact-form {
+    margin-right: 10vw;
+  }
+}
+body main #contact .contact-form h1 {
+  font-size: clamp(1.4rem, 3vmin, 2.5rem);
+  font-weight: 700;
+}
+body main #contact .contact-form h2 {
+  font-size: clamp(1rem, 1.7vmin, 1.8rem);
+  color: #999;
+  margin-bottom: 1em;
+}
+body main #contact .contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+body main #contact .contact-form form label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+body main #contact .contact-form form input,
+body main #contact .contact-form form textarea {
+  border-radius: 3px;
+  margin-bottom: 0.6em;
+  resize: none;
+}
+body main #contact .contact-form form input:not([type=button]),
+body main #contact .contact-form form textarea:not([type=button]) {
+  padding: 0.3em 1em;
+}
+body main #contact .contact-form form input[type=button],
+body main #contact .contact-form form textarea[type=button] {
+  padding: 0.5em 2em;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #2A7F62;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  margin-top: 0.5em;
+}
+body main #contact .contact-form form input[type=button].dark-theme,
+body main #contact .contact-form form textarea[type=button].dark-theme {
+  box-shadow: 0px 4px 8px rgba(42, 127, 98, 0.7);
+}
+body main #contact .map {
+  background-color: #6DCAAA;
+  flex-grow: 1;
+  margin-right: clamp(10px, 5vw, 250px);
+}
+@media screen and (min-width: 1200px) {
+  body main #contact .map {
+    margin-right: 10vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  body main #contact .map {
+    display: none;
+  }
 }/*# sourceMappingURL=index.css.map */

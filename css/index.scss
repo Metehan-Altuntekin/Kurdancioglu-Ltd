@@ -2,6 +2,10 @@
 
 body {
   background-color: $white;
+  > *{
+    width: 100%;
+    overflow-x: hidden;
+  }
 
   &.dark-theme {
     background-color: black;
@@ -652,6 +656,11 @@ body {
 
     #contact {
       @include padding-vertical;
+      display: flex;
+      flex-wrap: wrap;
+      overflow-x: hidden;
+      width: 100%;
+      justify-content: center;
 
       .banner {
         width: 100%;
@@ -659,16 +668,16 @@ body {
       }
 
       > ul.shopping-options {
+        width: 100%;
         @include padding-all;
 
         @include not-mobile {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px,auto));
+          grid-template-columns: repeat(auto-fit, minmax(300px, auto));
           gap: 1rem;
-         
+
           justify-content: center;
           justify-items: center;
-          
 
           > li {
             max-width: 800px;
@@ -676,7 +685,7 @@ body {
               height: 100%;
               padding: 1rem;
 
-              @include not-mobile{
+              @include not-mobile {
                 padding: calc($page-padding/2);
               }
             }
@@ -798,9 +807,55 @@ body {
       }
 
       .contact-form {
+        @include margin-sides;
+        display: flex;
+        flex-direction: column;
+        background-color: #d5eee6;
+        border-radius: clamp(10px, 3vmin, 35px);
+        padding: clamp(0.8rem, 3vmin, 2rem);
+        width: min(100%, 450px);
+        h1 {
+          font-size: clamp(1.4rem, 3vmin, 2.5rem);
+          font-weight: 700;
+        }
+        h2 {
+          font-size: clamp(1rem, 1.7vmin, 1.8rem);
+          color: #999;
+          margin-bottom: 1em;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+
+          label {
+            font-size: 0.95rem;
+            font-weight: 500;
+          }
+          input,
+          textarea {
+            border-radius: 3px;
+            margin-bottom: 0.6em;
+            resize: none;
+            &:not([type="button"]) {
+              padding: 0.3em 1em;
+            }
+
+            &[type="button"] {
+              @include primer-button;
+              width: 100%;
+              margin-top: 0.5em;
+            }
+          }
+        }
       }
 
       .map {
+        background-color: $light-button-green;
+        flex-grow: 1;
+        @include margin-right;
+        @include mobile{
+          display: none;
+        }
       }
     }
   }
