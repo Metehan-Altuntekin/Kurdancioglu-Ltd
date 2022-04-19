@@ -35,7 +35,7 @@ $desktop-big-min: 1200px;
 
 //Gap between viewport borders and content ▼
 
-$page-padding: clamp(10px, 7vw, 250px);
+$page-padding: clamp(10px, 5vw, 250px);
 $page-padding-big-screen: 10vw;
 
 @mixin padding-left {

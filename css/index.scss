@@ -535,9 +535,9 @@ body {
       @include padding-top;
       padding-bottom: 3rem;
 
-      @include not-mobile{
+      @include not-mobile {
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: $page-padding;
       }
 
@@ -582,18 +582,16 @@ body {
             &::before {
               left: calc(-1 * $page-padding);
 
-              @include not-mobile{
+              @include not-mobile {
                 left: calc(-3 * $side-bar-width);
               }
             }
           }
-          
+
           &:nth-child(2) {
             grid-column: 3/-1;
             &::before {
               right: calc(-3 * $side-bar-width);
-              
-              
             }
             * {
               width: 100%;
@@ -649,6 +647,160 @@ body {
           p {
           }
         }
+      }
+    }
+
+    #contact {
+      @include padding-vertical;
+
+      .banner {
+        width: 100%;
+        max-height: min(400px, 35vh);
+      }
+
+      > ul.shopping-options {
+        @include padding-all;
+
+        @include not-mobile {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px,auto));
+          gap: 1rem;
+         
+          justify-content: center;
+          justify-items: center;
+          
+
+          > li {
+            max-width: 800px;
+            article {
+              height: 100%;
+              padding: 1rem;
+
+              @include not-mobile{
+                padding: calc($page-padding/2);
+              }
+            }
+            &:first-child {
+              order: 1;
+            }
+            &:nth-child(2) {
+              order: 3;
+              justify-self: center;
+            }
+            &:last-child {
+              order: 2;
+            }
+          }
+        }
+        > li {
+          @include mobile {
+            @include padding-vertical;
+          }
+
+          article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            * {
+              text-align: center;
+            }
+            > img {
+              height: clamp(5rem, 20vmin, 120px);
+            }
+            h1 {
+              font-size: clamp(1.5rem, 3vmin, 4rem);
+              font-weight: 500;
+              margin-bottom: 0.5em;
+              margin-top: 0.5em;
+            }
+            p {
+              font-weight: 300;
+              font-size: 0.95rem;
+              margin-bottom: 1.6em;
+            }
+
+            ul.options {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 1rem;
+              li {
+                a {
+                  @include seconder-button;
+                  background-color: white;
+                  font-size: 0.8rem;
+                  color: #28ae82;
+                  display: flex;
+                  align-items: space-between;
+                  justify-content: center;
+                  border-color: #ccc;
+                  img {
+                    height: 0.75em;
+                    margin-left: 0.75em;
+                  }
+                }
+              }
+            }
+
+            ul.list {
+              li {
+                a {
+                  color: #28ae82;
+                  font-size: 0.9rem;
+
+                  &::before {
+                    content: "\2022";
+                    margin-right: 0.4em;
+                  }
+                }
+              }
+            }
+          }
+
+          &.shop-online,
+          &.local-sellers {
+            article {
+              @include mobile {
+                @include padding-all;
+              }
+
+              background-color: rgba($color: #cfcfcf, $alpha: 0.15);
+            }
+          }
+
+          &.our-store {
+            address {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 1rem;
+              align-items: end;
+              justify-content: center;
+              > a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.9rem;
+                img {
+                  height: 1.3em;
+                  margin-right: 1em;
+                }
+                span {
+                  font-style: normal;
+                  font-size: 1em;
+                  text-align: start;
+                  font-weight: 300;
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .contact-form {
+      }
+
+      .map {
       }
     }
   }

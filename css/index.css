@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #fff;
 }
@@ -6,8 +7,8 @@ body.dark-theme {
 }
 body header {
   z-index: 99999;
-  padding-left: clamp(10px, 7vw, 250px);
-  padding-right: clamp(10px, 7vw, 250px);
+  padding-left: clamp(10px, 5vw, 250px);
+  padding-right: clamp(10px, 5vw, 250px);
   background-color: #fff;
   transition: background-color 1s;
   height: clamp(35px, 7vmin, 200px);
@@ -233,7 +234,7 @@ body header.scrolled nav ul li a {
   color: white;
 }
 body main #hero {
-  padding-left: clamp(10px, 7vw, 250px);
+  padding-left: clamp(10px, 5vw, 250px);
   padding-top: clamp(35px, 7vmin, 200px);
   display: flex;
   flex-direction: column;
@@ -360,7 +361,7 @@ body main #hero .buttons .seconder-call-to {
 body main #products {
   width: 100%;
   overflow: hidden;
-  padding-bottom: clamp(10px, 7vw, 250px);
+  padding-bottom: clamp(10px, 5vw, 250px);
 }
 @media screen and (min-width: 1200px) {
   body main #products {
@@ -368,7 +369,7 @@ body main #products {
   }
 }
 body main #products > ul > li {
-  padding-bottom: clamp(10px, 7vw, 250px);
+  padding-bottom: clamp(10px, 5vw, 250px);
   display: grid;
   font-size: 0;
 }
@@ -378,7 +379,7 @@ body main #products > ul > li {
   }
 }
 body main #products > ul > li:nth-child(odd) {
-  padding-right: clamp(10px, 7vw, 250px);
+  padding-right: clamp(10px, 5vw, 250px);
   grid-template-columns: 1fr 2fr;
   grid-template-rows: repeat(3, auto);
   grid-template-areas: "image  extract" "dimens extract" "dimens button";
@@ -392,7 +393,7 @@ body main #products > ul > li:nth-child(odd) {
   body main #products > ul > li:nth-child(odd) {
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas: "image extract extract" "image extract extract" "image dimens  button ";
-    padding-left: clamp(10px, 7vw, 250px);
+    padding-left: clamp(10px, 5vw, 250px);
   }
 }
 @media screen and (min-width: 801px) and (min-width: 1200px) {
@@ -407,7 +408,7 @@ body main #products > ul > li:nth-child(odd) {
   }
 }
 body main #products > ul > li:nth-child(odd) article.extract {
-  padding-left: clamp(10px, 7vw, 250px);
+  padding-left: clamp(10px, 5vw, 250px);
 }
 @media screen and (min-width: 1200px) {
   body main #products > ul > li:nth-child(odd) article.extract {
@@ -425,7 +426,7 @@ body main #products > ul > li:nth-child(odd) article.extract .overline {
   transform: translateX(0.3em);
 }
 body main #products > ul > li:nth-child(odd) article.dimensions {
-  padding-left: clamp(10px, 7vw, 250px);
+  padding-left: clamp(10px, 5vw, 250px);
 }
 @media screen and (min-width: 1200px) {
   body main #products > ul > li:nth-child(odd) article.dimensions {
@@ -436,7 +437,7 @@ body main #products > ul > li:nth-child(odd) .call-to {
   justify-self: end;
 }
 body main #products > ul > li:nth-child(even) {
-  padding-left: clamp(10px, 7vw, 250px);
+  padding-left: clamp(10px, 5vw, 250px);
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(3, auto);
   grid-template-areas: "extract image" "extract dimens" "button  dimens";
@@ -450,7 +451,7 @@ body main #products > ul > li:nth-child(even) {
   body main #products > ul > li:nth-child(even) {
     grid-template-columns: 1fr 1fr 2fr;
     grid-template-areas: "extract extract image" "extract extract image" "button  dimens  image";
-    padding-right: clamp(10px, 7vw, 250px);
+    padding-right: clamp(10px, 5vw, 250px);
   }
 }
 @media screen and (min-width: 801px) and (min-width: 1200px) {
@@ -468,7 +469,7 @@ body main #products > ul > li:nth-child(even) img {
   justify-self: end;
 }
 body main #products > ul > li:nth-child(even) article.extract {
-  padding-right: clamp(10px, 7vw, 250px);
+  padding-right: clamp(10px, 5vw, 250px);
 }
 @media screen and (min-width: 1200px) {
   body main #products > ul > li:nth-child(even) article.extract {
@@ -484,7 +485,7 @@ body main #products > ul > li:nth-child(even) article.extract .watermark {
   transform: scaleX(-1);
 }
 body main #products > ul > li:nth-child(even) article.dimensions {
-  padding-right: clamp(10px, 7vw, 250px);
+  padding-right: clamp(10px, 5vw, 250px);
 }
 @media screen and (min-width: 1200px) {
   body main #products > ul > li:nth-child(even) article.dimensions {
@@ -595,7 +596,7 @@ body main #about {
   background-image: url("../assets/shapes/about-bg.svg");
   background-size: cover;
   background-position: center;
-  padding-top: clamp(10px, 7vw, 250px);
+  padding-top: clamp(10px, 5vw, 250px);
   padding-bottom: 3rem;
 }
 @media screen and (min-width: 1200px) {
@@ -607,7 +608,7 @@ body main #about {
   body main #about {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: clamp(10px, 7vw, 250px);
+    gap: clamp(10px, 5vw, 250px);
   }
 }
 body main #about article {
@@ -619,8 +620,8 @@ body main #about article p {
   font-weight: 300;
 }
 body main #about article:first-child, body main #about article:nth-child(2) {
-  margin-left: clamp(10px, 7vw, 250px);
-  margin-right: clamp(10px, 7vw, 250px);
+  margin-left: clamp(10px, 5vw, 250px);
+  margin-right: clamp(10px, 5vw, 250px);
 }
 @media screen and (min-width: 1200px) {
   body main #about article:first-child, body main #about article:nth-child(2) {
@@ -656,7 +657,7 @@ body main #about article:first-child:first-child, body main #about article:nth-c
   grid-column: 1/3;
 }
 body main #about article:first-child:first-child::before, body main #about article:nth-child(2):first-child::before {
-  left: calc(-1 * clamp(10px, 7vw, 250px));
+  left: calc(-1 * clamp(10px, 5vw, 250px));
 }
 @media screen and (min-width: 801px) {
   body main #about article:first-child:first-child::before, body main #about article:nth-child(2):first-child::before {
@@ -674,8 +675,8 @@ body main #about article:first-child:nth-child(2) *, body main #about article:nt
   text-align: end;
 }
 body main #about article.founder {
-  padding-left: clamp(10px, 7vw, 250px);
-  padding-right: clamp(10px, 7vw, 250px);
+  padding-left: clamp(10px, 5vw, 250px);
+  padding-right: clamp(10px, 5vw, 250px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -724,4 +725,218 @@ body main #about article.founder .heading h2 {
   text-align: start;
   line-height: 1;
   padding-top: 0.4em;
+}
+body main #contact {
+  padding-top: clamp(10px, 5vw, 250px);
+  padding-bottom: clamp(10px, 5vw, 250px);
+}
+@media screen and (min-width: 1200px) {
+  body main #contact {
+    padding-top: 10vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body main #contact {
+    padding-bottom: 10vw;
+  }
+}
+body main #contact .banner {
+  width: 100%;
+  max-height: min(400px, 35vh);
+}
+body main #contact > ul.shopping-options {
+  padding-left: clamp(10px, 5vw, 250px);
+  padding-right: clamp(10px, 5vw, 250px);
+  padding-top: clamp(10px, 5vw, 250px);
+  padding-bottom: clamp(10px, 5vw, 250px);
+}
+@media screen and (min-width: 1200px) {
+  body main #contact > ul.shopping-options {
+    padding-left: 10vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body main #contact > ul.shopping-options {
+    padding-right: 10vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body main #contact > ul.shopping-options {
+    padding-top: 10vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body main #contact > ul.shopping-options {
+    padding-bottom: 10vw;
+  }
+}
+@media screen and (min-width: 801px) {
+  body main #contact > ul.shopping-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1rem;
+    justify-content: center;
+    justify-items: center;
+  }
+  body main #contact > ul.shopping-options > li {
+    max-width: 800px;
+  }
+  body main #contact > ul.shopping-options > li article {
+    height: 100%;
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 801px) and (min-width: 801px) {
+  body main #contact > ul.shopping-options > li article {
+    padding: calc(clamp(10px, 5vw, 250px) / 2);
+  }
+}
+@media screen and (min-width: 801px) {
+  body main #contact > ul.shopping-options > li:first-child {
+    order: 1;
+  }
+}
+@media screen and (min-width: 801px) {
+  body main #contact > ul.shopping-options > li:nth-child(2) {
+    order: 3;
+    justify-self: center;
+  }
+}
+@media screen and (min-width: 801px) {
+  body main #contact > ul.shopping-options > li:last-child {
+    order: 2;
+  }
+}
+@media screen and (max-width: 800px) {
+  body main #contact > ul.shopping-options > li {
+    padding-top: clamp(10px, 5vw, 250px);
+    padding-bottom: clamp(10px, 5vw, 250px);
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 1200px) {
+  body main #contact > ul.shopping-options > li {
+    padding-top: 10vw;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 1200px) {
+  body main #contact > ul.shopping-options > li {
+    padding-bottom: 10vw;
+  }
+}
+body main #contact > ul.shopping-options > li article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main #contact > ul.shopping-options > li article * {
+  text-align: center;
+}
+body main #contact > ul.shopping-options > li article > img {
+  height: clamp(5rem, 20vmin, 120px);
+}
+body main #contact > ul.shopping-options > li article h1 {
+  font-size: clamp(1.5rem, 3vmin, 4rem);
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+body main #contact > ul.shopping-options > li article p {
+  font-weight: 300;
+  font-size: 0.95rem;
+  margin-bottom: 1.6em;
+}
+body main #contact > ul.shopping-options > li article ul.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+body main #contact > ul.shopping-options > li article ul.options li a {
+  padding: 0.5em 2em;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: center;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: transparent;
+  border: 1px solid #2A7F62;
+  color: #2A7F62;
+  font-weight: 600;
+  background-color: white;
+  font-size: 0.8rem;
+  color: #28ae82;
+  display: flex;
+  align-items: space-between;
+  justify-content: center;
+  border-color: #ccc;
+}
+body main #contact > ul.shopping-options > li article ul.options li a img {
+  height: 0.75em;
+  margin-left: 0.75em;
+}
+body main #contact > ul.shopping-options > li article ul.list li a {
+  color: #28ae82;
+  font-size: 0.9rem;
+}
+body main #contact > ul.shopping-options > li article ul.list li a::before {
+  content: "•";
+  margin-right: 0.4em;
+}
+body main #contact > ul.shopping-options > li.shop-online article, body main #contact > ul.shopping-options > li.local-sellers article {
+  background-color: rgba(207, 207, 207, 0.15);
+}
+@media screen and (max-width: 800px) {
+  body main #contact > ul.shopping-options > li.shop-online article, body main #contact > ul.shopping-options > li.local-sellers article {
+    padding-left: clamp(10px, 5vw, 250px);
+    padding-right: clamp(10px, 5vw, 250px);
+    padding-top: clamp(10px, 5vw, 250px);
+    padding-bottom: clamp(10px, 5vw, 250px);
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 1200px) {
+  body main #contact > ul.shopping-options > li.shop-online article, body main #contact > ul.shopping-options > li.local-sellers article {
+    padding-left: 10vw;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 1200px) {
+  body main #contact > ul.shopping-options > li.shop-online article, body main #contact > ul.shopping-options > li.local-sellers article {
+    padding-right: 10vw;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 1200px) {
+  body main #contact > ul.shopping-options > li.shop-online article, body main #contact > ul.shopping-options > li.local-sellers article {
+    padding-top: 10vw;
+  }
+}
+@media screen and (max-width: 800px) and (min-width: 1200px) {
+  body main #contact > ul.shopping-options > li.shop-online article, body main #contact > ul.shopping-options > li.local-sellers article {
+    padding-bottom: 10vw;
+  }
+}
+body main #contact > ul.shopping-options > li.our-store address {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: end;
+  justify-content: center;
+}
+body main #contact > ul.shopping-options > li.our-store address > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+body main #contact > ul.shopping-options > li.our-store address > a img {
+  height: 1.3em;
+  margin-right: 1em;
+}
+body main #contact > ul.shopping-options > li.our-store address > a span {
+  font-style: normal;
+  font-size: 1em;
+  text-align: start;
+  font-weight: 300;
+  white-space: nowrap;
 }/*# sourceMappingURL=index.css.map */
