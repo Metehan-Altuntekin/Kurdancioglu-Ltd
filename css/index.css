@@ -1,9 +1,10 @@
 @charset "UTF-8";
+html {
+  width: 100%;
+}
+
 body {
   background-color: #fff;
-  overflow-x: hidden;
-}
-body > * {
   width: 100%;
 }
 body.dark-theme {
@@ -366,10 +367,16 @@ body main #products {
   width: 100%;
   overflow: hidden;
   padding-bottom: clamp(10px, 5vw, 250px);
+  padding-top: clamp(10px, 5vw, 250px);
 }
 @media screen and (min-width: 1200px) {
   body main #products {
     padding-bottom: 10vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  body main #products {
+    padding-top: 10vw;
   }
 }
 body main #products > ul > li {
@@ -672,7 +679,12 @@ body main #about article:first-child:nth-child(2), body main #about article:nth-
   grid-column: 3/-1;
 }
 body main #about article:first-child:nth-child(2)::before, body main #about article:nth-child(2):nth-child(2)::before {
-  right: calc(-3 * clamp(8px, 1.5vmin, 15px));
+  right: calc(-1 * clamp(10px, 5vw, 250px));
+}
+@media screen and (min-width: 801px) {
+  body main #about article:first-child:nth-child(2)::before, body main #about article:nth-child(2):nth-child(2)::before {
+    right: calc(-3 * clamp(8px, 1.5vmin, 15px));
+  }
 }
 body main #about article:first-child:nth-child(2) *, body main #about article:nth-child(2):nth-child(2) * {
   width: 100%;
@@ -883,6 +895,10 @@ body main #contact > ul.shopping-options > li article ul.options li a {
   justify-content: center;
   border-color: #ccc;
 }
+body main #contact > ul.shopping-options > li article ul.options li a.dark-theme {
+  background-color: transparent;
+  border-color: #333;
+}
 body main #contact > ul.shopping-options > li article ul.options li a img {
   height: 0.75em;
   margin-left: 0.75em;
@@ -970,6 +986,9 @@ body main #contact .contact-form {
     margin-right: 10vw;
   }
 }
+body main #contact .contact-form.dark-theme {
+  background-color: #1D322B;
+}
 body main #contact .contact-form h1 {
   font-size: clamp(1.4rem, 3vmin, 2.5rem);
   font-weight: 700;
@@ -996,6 +1015,10 @@ body main #contact .contact-form form textarea {
 body main #contact .contact-form form input:not([type=button]),
 body main #contact .contact-form form textarea:not([type=button]) {
   padding: 0.3em 1em;
+}
+body main #contact .contact-form form input:not([type=button]).dark-theme,
+body main #contact .contact-form form textarea:not([type=button]).dark-theme {
+  background-color: #294239;
 }
 body main #contact .contact-form form input[type=button],
 body main #contact .contact-form form textarea[type=button] {

@@ -1,11 +1,10 @@
 @import "utilities";
-
+html{
+  width: 100%;
+}
 body {
   background-color: $white;
-  overflow-x: hidden;
-  > *{
-    width: 100%;
-  }
+  width: 100%;
 
   &.dark-theme {
     background-color: black;
@@ -342,6 +341,7 @@ body {
       width: 100%;
       overflow: hidden;
       @include padding-bottom;
+      @include padding-top;
 
       > ul {
         > li {
@@ -591,11 +591,15 @@ body {
               }
             }
           }
-
+          
           &:nth-child(2) {
             grid-column: 3/-1;
             &::before {
-              right: calc(-3 * $side-bar-width);
+              right: calc(-1 * $page-padding);
+              
+              @include not-mobile {
+                right: calc(-3 * $side-bar-width);
+              }
             }
             * {
               width: 100%;
@@ -743,6 +747,11 @@ body {
                   align-items: space-between;
                   justify-content: center;
                   border-color: #ccc;
+
+                  &.dark-theme{
+                    background-color: transparent;
+                    border-color: #333;
+                  }
                   img {
                     height: 0.75em;
                     margin-left: 0.75em;
@@ -814,6 +823,10 @@ body {
         border-radius: clamp(10px, 3vmin, 35px);
         padding: clamp(0.8rem, 3vmin, 2rem);
         width: min(100%, 450px);
+
+        &.dark-theme{
+          background-color: #1D322B;
+        }
         h1 {
           font-size: clamp(1.4rem, 3vmin, 2.5rem);
           font-weight: 700;
@@ -838,6 +851,10 @@ body {
             resize: none;
             &:not([type="button"]) {
               padding: 0.3em 1em;
+
+              &.dark-theme{
+                background-color: #294239;
+              }
             }
 
             &[type="button"] {
