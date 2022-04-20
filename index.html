@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/fade-in.css">
@@ -210,12 +210,12 @@
       const productCards = document.querySelectorAll("#products >ul >li")
       productCards.forEach((product, index) => {
         console.log(index)
-        if(index % 2 == 0){
+        if (index % 2 == 0) {
           product.querySelector("img").dataset.fadeIn = "from-left"
           product.querySelector(".extract").dataset.fadeIn = "from-right"
         }
-        else{
-          product.querySelector("img").dataset.fadeIn = "from-right"  
+        else {
+          product.querySelector("img").dataset.fadeIn = "from-right"
           product.querySelector(".extract").dataset.fadeIn = "from-left"
         }
       });
@@ -243,7 +243,7 @@
     <section id="contact">
       <img class="banner" src="./assets/images/store.png" alt="A photo in a mall, framing a walkthrough and some stores at sides">
       <ul class="shopping-options">
-        <li class="shop-online" data-fade-in="from-bottom" >
+        <li class="shop-online" data-fade-in="from-bottom">
           <article>
             <img src="./assets/illustrations/shop-online.svg" aria-hidden="true">
             <h1>Shop Online</h1>
@@ -322,7 +322,7 @@
       </svg>
     </a>
     <div class="copyright">
-      <span><time datetime="2022">2022</time> Kürdancıoğlu Kürdan İşleri <b>Sahte - Fake</b> Ltd. Şti.  ™</span>
+      <span><time datetime="2022">2022</time> Kürdancıoğlu Kürdan İşleri <b>Sahte - Fake</b> Ltd. Şti. ™</span>
       <span>None rights reserved.</span>
     </div>
     <div class="social-media">
@@ -343,12 +343,14 @@
     </address>
     </div>
     <div class="disclaimer">
-      <span>Disclaimer:</span> This website is built for educational purposes. The “Kürdancıoğlu”  company in this website is <b>not a real company</b>.
+      <span>Disclaimer:</span> This website is built for educational purposes. The “Kürdancıoğlu” company in this website is <b>not a real company</b>.
     </div>
   </footer>
   <script src="./js/main.js"></script>
   <script src="./js/header.js"></script>
   <script src="./js/fade-in.js"></script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuW-nHZC9hDcjtCF7McxZZH5IGKWh1iCo&callback=initMap&v=weekly"></script>
+  <script src="./js/google-map.js"></script>
 </body>
 
 </html>
