@@ -16,8 +16,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/fade-in.css">
 </head>
 
 <body>
@@ -72,13 +74,13 @@
   </header>
   <main>
     <section id="hero">
-      <h1 data-watermark="The best">The best toothpicks made from tree flesh</h1>
-      <h2>With various different versions of toothpicks in great quality for a wide angle of purposes</h2>
-      <div class="buttons">
+      <h1 data-watermark="The best" data-fade-in="from-top">The best toothpicks made from tree flesh</h1>
+      <h2 data-fade-in="from-top" data-fade-in-delay="500">With various different versions of toothpicks in great quality for a wide angle of purposes</h2>
+      <div class="buttons" data-fade-in="from-bottom" data-fade-in-delay="600">
         <a href="#products" class="call-to">See Products <img src="./assets/icons/chevron-down-white.svg" aria-hidden="true"></a>
         <a href="#about" class="seconder-call-to">Learn More</a>
       </div>
-      <div class="image">
+      <div class="image" data-fade-in="from-right">
         <img class="light" src="./assets/images/hero-light-theme.png" aria-hidden="true">
         <img class="dark" src="./assets/images/hero-dark-theme.png" aria-hidden="true">
       </div>
@@ -203,30 +205,45 @@
         </li>
       </ul>
     </section>
+    <script>
+      //Fade-in attributes of Products Section is given here. The reason of this is to make it determine fade-in directions automatically.
+      const productCards = document.querySelectorAll("#products >ul >li")
+      productCards.forEach((product, index) => {
+        console.log(index)
+        if(index % 2 == 0){
+          product.querySelector("img").dataset.fadeIn = "from-left"
+          product.querySelector(".extract").dataset.fadeIn = "from-right"
+        }
+        else{
+          product.querySelector("img").dataset.fadeIn = "from-right"  
+          product.querySelector(".extract").dataset.fadeIn = "from-left"
+        }
+      });
+    </script>
     <section id="about">
-      <article>
+      <article data-fade-in="from-left">
         <h1>Founded With Passion</h1>
         <h2>It was needed</h2>
         <p>Etnobel mäpur dihade könera. Posk kaditt dipp selfiepinne mikiheten. Öpålogi dekyck vir, så tijådode. Hemisont sir tebelt att nyhetsbok. Polyhung puvans nyling Siv Öberg finansfobi. Negisk ode mimagisk filosion. Funkis Margaretha Mårtensson. Remil krosm dide, hur heterodong. Janing köde trin: ajiskap pren. Koköng. </p>
       </article>
-      <article>
+      <article data-fade-in="from-right">
         <h1>We Have A Mission</h1>
         <h2>We are good at it</h2>
         <p>Etnobel mäpur dihade könera. Posk kaditt dipp selfiepinne mikiheten. Öpålogi dekyck vir, så tijådode. Hemisont sir tebelt att nyhetsbok. Polyhung puvans nyling Siv Öberg finansfobi. Negisk ode mimagisk filosion. Funkis Margaretha Mårtensson. Remil krosm dide, hur heterodong. Janing köde trin: ajiskap pren. Koköng. </p>
       </article>
       <article class="founder">
-        <img src="./assets/images/cihangir-kurdancioglu.png" alt="A photo of Cihangir Kürdancıoğlu (the founder)">
-        <div class="heading">
+        <img data-fade-in="from-bottom" data-fade-in-delay="200" src="./assets/images/cihangir-kurdancioglu.png" alt="A photo of Cihangir Kürdancıoğlu (the founder)">
+        <div class="heading" data-fade-in="from-left">
           <h1>Cihangir Kürdancıoğlu</h1>
           <h2>- Founder</h2>
         </div>
-        <p>Cringe e-cigarett i retronym nätdeklarant i otrohetsdejting i social turism inklusive betalvärd. Tvåmetersregeln menskopp till hypa hubot dumpling kemsex. Koscheria svischa karriärcoach techlash fidget spinner. “Anime dumpstra, bonus malus för”, blogg köttklister. </p>
+        <p data-fade-in="from-top">Cringe e-cigarett i retronym nätdeklarant i otrohetsdejting i social turism inklusive betalvärd. Tvåmetersregeln menskopp till hypa hubot dumpling kemsex. Koscheria svischa karriärcoach techlash fidget spinner. “Anime dumpstra, bonus malus för”, blogg köttklister. </p>
       </article>
     </section>
     <section id="contact">
       <img class="banner" src="./assets/images/store.png" alt="A photo in a mall, framing a walkthrough and some stores at sides">
       <ul class="shopping-options">
-        <li class="shop-online">
+        <li class="shop-online" data-fade-in="from-bottom" >
           <article>
             <img src="./assets/illustrations/shop-online.svg" aria-hidden="true">
             <h1>Shop Online</h1>
@@ -237,7 +254,7 @@
             </ul>
           </article>
         </li>
-        <li class="local-sellers">
+        <li class="local-sellers" data-fade-in="from-bottom" data-fade-in-delay="400">
           <article>
             <img src="./assets/illustrations/local-sellers.svg" aria-hidden="true">
             <h1>Local Sellers</h1>
@@ -255,7 +272,7 @@
             </ul>
           </article>
         </li>
-        <li class="our-store">
+        <li class="our-store" data-fade-in="from-bottom" data-fade-in-delay="800">
           <article>
             <img src="./assets/illustrations/our-store.svg" aria-hidden="true">
             <h1>Visit Our Store</h1>
@@ -331,6 +348,7 @@
   </footer>
   <script src="./js/main.js"></script>
   <script src="./js/header.js"></script>
+  <script src="./js/fade-in.js"></script>
 </body>
 
 </html>

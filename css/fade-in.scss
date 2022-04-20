@@ -1,0 +1,27 @@
+@import "utilities";
+
+[data-fade-in]{
+  opacity: 0;
+  scale: 0.9;
+  transition: opacity 2s, transform 1s;
+}
+
+[data-fade-in=from-bottom]{
+  transform: translateY(50%);
+}
+[data-fade-in=from-top]{
+  transform: translateY(-50%);
+}
+[data-fade-in=from-left]{
+  transform: translateX(-50%);
+}
+[data-fade-in=from-right]{
+  transform: translateX(50%);
+}
+
+.appear{
+  opacity: 1;
+  scale: 1;
+  transform: translate(0);
+}
+
