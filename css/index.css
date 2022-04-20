@@ -6,6 +6,11 @@ html {
 body {
   background-color: #fff;
   width: 100%;
+  overflow-x: hidden;
+}
+body > * {
+  width: 100%;
+  overflow-x: hidden;
 }
 body.dark-theme {
   background-color: black;
@@ -987,7 +992,7 @@ body main #contact .contact-form {
   }
 }
 body main #contact .contact-form.dark-theme {
-  background-color: #1D322B;
+  background-color: #1d322b;
 }
 body main #contact .contact-form h1 {
   font-size: clamp(1.4rem, 3vmin, 2.5rem);

@@ -1,11 +1,16 @@
 @import "utilities";
-html{
+html {
   width: 100%;
 }
 body {
   background-color: $white;
   width: 100%;
 
+  overflow-x: hidden;
+  > * {
+    width: 100%;
+    overflow-x: hidden;
+  }
   &.dark-theme {
     background-color: black;
   }
@@ -591,12 +596,12 @@ body {
               }
             }
           }
-          
+
           &:nth-child(2) {
             grid-column: 3/-1;
             &::before {
               right: calc(-1 * $page-padding);
-              
+
               @include not-mobile {
                 right: calc(-3 * $side-bar-width);
               }
@@ -748,7 +753,7 @@ body {
                   justify-content: center;
                   border-color: #ccc;
 
-                  &.dark-theme{
+                  &.dark-theme {
                     background-color: transparent;
                     border-color: #333;
                   }
@@ -824,8 +829,8 @@ body {
         padding: clamp(0.8rem, 3vmin, 2rem);
         width: min(100%, 450px);
 
-        &.dark-theme{
-          background-color: #1D322B;
+        &.dark-theme {
+          background-color: #1d322b;
         }
         h1 {
           font-size: clamp(1.4rem, 3vmin, 2.5rem);
@@ -852,7 +857,7 @@ body {
             &:not([type="button"]) {
               padding: 0.3em 1em;
 
-              &.dark-theme{
+              &.dark-theme {
                 background-color: #294239;
               }
             }
@@ -870,126 +875,123 @@ body {
         background-color: $light-button-green;
         flex-grow: 1;
         @include margin-right;
-        @include mobile{
+        @include mobile {
           display: none;
         }
       }
     }
   }
 
-  footer{
+  footer {
     @include padding-sides;
     padding-top: clamp(2rem, 8vmin, 5rem);
     padding-bottom: clamp(2rem, 8vmin, 5rem);
     background-color: #134030;
     display: grid;
     gap: 3rem;
-    grid-template-areas: 
-    "logo"
-    "copy"
-    "addr"
-    "medi"
-    "disc";
-    @include not-mobile{
+    grid-template-areas:
+      "logo"
+      "copy"
+      "addr"
+      "medi"
+      "disc";
+    @include not-mobile {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: auto auto;
-      grid-template-areas: 
-      "logo .... medi"
-      "copy disc addr";
+      grid-template-areas:
+        "logo .... medi"
+        "copy disc addr";
     }
 
-    *{
+    * {
       color: white;
-      
     }
 
-    .logo{
+    .logo {
       grid-area: logo;
-      svg{
+      svg {
         height: clamp(2rem, 5vmax, 4rem);
-        .text{
+        .text {
           fill: white;
         }
       }
     }
-    .copyright{
+    .copyright {
       grid-area: copy;
       display: flex;
       flex-direction: column;
       font-weight: 300;
-      
-      @include not-mobile{
+
+      @include not-mobile {
         align-self: end;
       }
-      
-      span{
+
+      span {
         font-size: 0.9rem;
-        &:first-child{
+        &:first-child {
           font-weight: 400;
         }
-        &:last-child{
+        &:last-child {
           color: #bbb;
         }
       }
     }
-    .social-media{
+    .social-media {
       grid-area: medi;
       justify-self: center;
-      @include not-mobile{
+      @include not-mobile {
         justify-self: end;
       }
-      ul{
+      ul {
         font-size: 2.5rem;
         display: flex;
         gap: 0.1em;
-        li{
+        li {
           font-size: inherit;
           height: 1em;
-          img{
+          img {
             height: 100%;
           }
         }
       }
     }
-    address{
+    address {
       grid-area: addr;
       display: flex;
       flex-direction: column;
       align-items: end;
 
-      @include not-mobile{
+      @include not-mobile {
         align-self: end;
       }
 
-      *{
+      * {
         font-weight: 300;
       }
-      a{
+      a {
         margin-bottom: 0.5em;
-        &.phone{
-
+        &.phone {
         }
-        &.email{
+        &.email {
           color: lightblue;
         }
-        &.location{
+        &.location {
           color: #ccc;
         }
       }
     }
-    .disclaimer{
+    .disclaimer {
       grid-area: disc;
       text-align: center;
       font-weight: 300;
-      
-      @include not-mobile{
+
+      @include not-mobile {
         align-self: end;
       }
 
-      span{
+      span {
         color: hsla(0, 50%, 50%);
       }
-      
     }
   }
 }
