@@ -12,7 +12,7 @@ body > * {
   width: 100%;
   overflow-x: hidden;
 }
-body.dark-theme {
+body[data-dark-theme=true] {
   background-color: black;
 }
 body header {
@@ -40,7 +40,7 @@ body header {
     padding-right: 10vw;
   }
 }
-body header.dark-theme {
+body header[data-dark-theme=true] {
   background-color: black;
 }
 @media screen and (max-width: 800px) {
@@ -63,7 +63,7 @@ body header .logo svg {
 body header .logo svg .text {
   transition: fill 1s;
 }
-body header .logo svg .text.dark-theme {
+body header .logo svg .text[data-dark-theme=true] {
   fill: white;
 }
 body header .theme-toggle {
@@ -79,10 +79,10 @@ body header .theme-toggle {
   position: relative;
   transition: background-color 1s;
 }
-body header .theme-toggle.dark-theme {
+body header .theme-toggle[data-dark-theme=true] {
   background-color: #28332f;
 }
-body header .theme-toggle.dark-theme .active-bg {
+body header .theme-toggle[data-dark-theme=true] .active-bg {
   left: 50%;
 }
 body header .theme-toggle .active-bg {
@@ -126,8 +126,8 @@ body header nav.mobile-nav-toggle svg path {
   fill: black;
   transition: fill 1s;
 }
-body header .mobile-nav-toggle.mobile-nav-toggle.dark-theme svg path,
-body header nav.mobile-nav-toggle.dark-theme svg path {
+body header .mobile-nav-toggle.mobile-nav-toggle[data-dark-theme=true] svg path,
+body header nav.mobile-nav-toggle[data-dark-theme=true] svg path {
   fill: white;
 }
 @media screen and (min-width: 801px) {
@@ -217,8 +217,8 @@ body header nav:is(nav) ul li a {
 body header nav:is(nav) ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
-  body header .mobile-nav-toggle:is(nav) ul li a.dark-theme,
-body header nav:is(nav) ul li a.dark-theme {
+  body header .mobile-nav-toggle:is(nav) ul li a[data-dark-theme=true],
+body header nav:is(nav) ul li a[data-dark-theme=true] {
     color: black;
   }
 }
@@ -262,11 +262,11 @@ body main #hero .image {
   height: 100%;
   left: 25%;
 }
-body main #hero .image.dark-theme {
+body main #hero .image[data-dark-theme=true] {
   left: 50%;
 }
 @media screen and (max-width: 800px) and (orientation: landscape) {
-  body main #hero .image.dark-theme {
+  body main #hero .image[data-dark-theme=true] {
     left: 70%;
   }
 }
@@ -900,7 +900,7 @@ body main #contact > ul.shopping-options > li article ul.options li a {
   justify-content: center;
   border-color: #ccc;
 }
-body main #contact > ul.shopping-options > li article ul.options li a.dark-theme {
+body main #contact > ul.shopping-options > li article ul.options li a[data-dark-theme=true] {
   background-color: transparent;
   border-color: #333;
 }
@@ -991,7 +991,7 @@ body main #contact .contact-form {
     margin-right: 10vw;
   }
 }
-body main #contact .contact-form.dark-theme {
+body main #contact .contact-form[data-dark-theme=true] {
   background-color: #1d322b;
 }
 body main #contact .contact-form h1 {
@@ -1021,8 +1021,8 @@ body main #contact .contact-form form input:not([type=button]),
 body main #contact .contact-form form textarea:not([type=button]) {
   padding: 0.3em 1em;
 }
-body main #contact .contact-form form input:not([type=button]).dark-theme,
-body main #contact .contact-form form textarea:not([type=button]).dark-theme {
+body main #contact .contact-form form input:not([type=button])[data-dark-theme=true],
+body main #contact .contact-form form textarea:not([type=button])[data-dark-theme=true] {
   background-color: #294239;
 }
 body main #contact .contact-form form input[type=button],

@@ -16,7 +16,7 @@
   &.dark{
     display: none;
   }
-  &.dark-theme{
+  &[data-dark-theme="true"]{
     color: white;
 
     &.dark{

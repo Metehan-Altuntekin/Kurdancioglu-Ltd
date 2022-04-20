@@ -14,13 +14,13 @@
 *.dark {
   display: none;
 }
-*.dark-theme {
+*[data-dark-theme=true] {
   color: white;
 }
-*.dark-theme.dark {
+*[data-dark-theme=true].dark {
   display: unset;
 }
-*.dark-theme.light {
+*[data-dark-theme=true].light {
   display: none;
 }
 

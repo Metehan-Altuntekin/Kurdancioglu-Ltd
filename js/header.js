@@ -28,25 +28,6 @@ mobileNavClose.addEventListener("click", function () {
   mobileNav.classList.remove("open")
 })
 
-//Dark - Light theme toggle
-const themeToggle = document.getElementById("theme-toggle")
-
-themeToggle.addEventListener("click", () => {
-  if (body.classList.contains("dark-theme")) {
-    /* body.classList.remove("dark-theme")
-    themeToggle.classList.remove("dark-theme") */
-    everything.forEach(item => {
-      item.classList.remove("dark-theme")
-    })
-  } else {
-    /* body.classList.add("dark-theme")
-    themeToggle.classList.add("dark-theme") */
-    everything.forEach(item => {
-      item.classList.add("dark-theme")
-    })
-  }
-})
-
 
 //Currently visible section
 
