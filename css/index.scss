@@ -20,7 +20,7 @@ body {
     background-color: $white;
     transition: background-color 1s;
     height: $header-height;
-
+    overflow-y: hidden;
     display: grid;
     position: fixed;
     top: 0;

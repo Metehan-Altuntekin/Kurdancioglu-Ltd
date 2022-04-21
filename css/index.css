@@ -21,7 +21,8 @@ body header {
   padding-right: clamp(10px, 5vw, 250px);
   background-color: #fff;
   transition: background-color 1s;
-  height: clamp(35px, 7vmin, 200px);
+  height: clamp(35px, 7vh, 200px);
+  overflow-y: hidden;
   display: grid;
   position: fixed;
   top: 0;
@@ -182,7 +183,7 @@ body header nav:is(nav) #close-mobile-nav {
     background-color: transparent;
     position: absolute;
     right: 10vw;
-    top: calc(clamp(35px, 7vmin, 200px) / 2);
+    top: calc(clamp(35px, 7vh, 200px) / 2);
     height: 1.8rem;
   }
   body header .mobile-nav-toggle:is(nav) #close-mobile-nav svg,
@@ -197,7 +198,7 @@ body header nav:is(nav) #close-mobile-nav svg path {
   body header .mobile-nav-toggle:is(nav) ul,
 body header nav:is(nav) ul {
     flex-direction: column;
-    padding: calc(clamp(35px, 7vmin, 200px) + 3rem) 10vw 0 10vw;
+    padding: calc(clamp(35px, 7vh, 200px) + 3rem) 10vw 0 10vw;
     gap: 1rem;
     align-items: start;
     justify-content: start;
@@ -245,7 +246,7 @@ body header.scrolled nav ul li a {
 }
 body main #hero {
   padding-left: clamp(10px, 5vw, 250px);
-  padding-top: clamp(35px, 7vmin, 200px);
+  padding-top: clamp(35px, 7vh, 200px);
   display: flex;
   flex-direction: column;
   justify-content: center;
