@@ -1,2 +1,4 @@
 # Kurdancioglu-Ltd
-A fake business presentation site designed and developed by Metehan Altuntekin for fun and practicing.
+A non existing business presentation site I designed and developed for fun and practicing.
+
+**Live**: https://metehan-altuntekin.github.io/Kurdancioglu-Ltd/
